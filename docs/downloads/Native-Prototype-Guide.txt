@@ -1,0 +1,52 @@
+COMPANION NATIVE MACOS PROTOTYPE
+UNM and CNM App Contest 2026
+
+This is the actual development prototype, not the scripted browser preview.
+
+COMPATIBILITY
+Apple Silicon Mac, macOS 14 or later. Tested on a Mac with 16 GB RAM.
+This archive contains an arm64 build; Windows and Intel Macs cannot run this build.
+Internet is needed for model download and live websites. Local inference does not use a paid AI API.
+
+LOCAL MODEL SETUP
+1. Obtain Ollama from its official site: https://ollama.com/download
+2. In Terminal, download the tested local model: ollama pull qwen3.5:4b
+   The tested quantized model download is approximately 3.3 GB and is not included here.
+3. Keep Ollama running locally at http://127.0.0.1:11434. Do not expose it to the network.
+4. Launch Learning Companion Fresh.app. Type a command and select Go.
+5. Voice is optional. Select Speak to request macOS Microphone and Speech Recognition permissions.
+   On-device English recognition must be supported; typed input works without microphone access.
+
+DISTRIBUTION STATUS
+This is a locally signed development build, not a notarized public macOS release.
+A downloaded build may be blocked by Gatekeeper. Do not disable macOS security protections.
+If blocked, use the public interactive preview and request a supervised native demonstration
+or a future notarized build from the developer. No administrator password is required by Companion itself.
+
+THREE MINUTE JUDGE WALKTHROUGH
+A. Say or type: Open Wikipedia
+   Expect the actual website and a checked completion message.
+B. Say or type: Open example.org in another tab
+   Expect a second Companion tab; this does not operate Chrome tabs.
+C. Say or type: Switch back to the first tab
+   Expect the Wikipedia tab without repeating its website.
+D. Say or type: Search for something
+   Expect a clarification question, not a guessed topic.
+E. Press Stop while a task is active. Expect cancellation without moving the system mouse.
+
+SCOPE AND PRIVACY
+The purple pointer belongs to Companion's browser. The model cannot execute arbitrary shell commands
+or OS clicks. Browser tasks are bounded public navigation/search actions. Login, purchases, posting,
+arbitrary forms, and unrestricted control of other apps are not supported.
+Session context stays in memory and is not durable across quitting. Clear session memory is in Info;
+it clears task context, not the currently open tabs. Ephemeral website data is discarded on quitting.
+Normal websites still receive network requests and may retain their own logs.
+Legacy practice tools may request Screen Recording and Accessibility separately; they are not needed
+for the main embedded-browser demonstration. Do not use personal email, payment data, or private documents
+for judging. No account or API key is required for the browser preview.
+
+THIRD PARTY COMPONENTS
+Native UI: Apple SwiftUI, AppKit, WebKit, Speech and AVFoundation.
+Inference runtime obtained separately: Ollama. Model obtained separately: Qwen3.5 4B.
+Official model card and license: https://huggingface.co/Qwen/Qwen3.5-4B
+No model weights, signing private keys, keychains, user documents, or private settings are bundled.
